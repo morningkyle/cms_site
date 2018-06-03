@@ -13,8 +13,11 @@ from post.forms import PostForm, CommentForm
 
 def root_view(request):
     return HttpResponse(r'<a href="/post"> '
-                        r'<h1 align="center"  style="font-size:80px">zenodo</h1> '
-                        r'</a>')
+                        r'<h1 align="center"  style="font-size:80px">Qilin Garden</h1> '
+                        r'</a>'
+                        r'<p style="text-align:center; font:16pt; courier; color:blue">' 
+                        r'A Python and Django powered website.'
+                        r'</p>')
 
 
 def post_list(request, tag_slug=None):
@@ -37,16 +40,15 @@ def post_list(request, tag_slug=None):
         # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
     return render(request, 'post/list.html', {'page': page,
-                                                   'posts': posts,
-                                                   'tag': tag})
+                                              'posts': posts,
+                                              'tag': tag})
 
 
 def post_detail(request, year, month, day, post):
-    post = get_object_or_404(Post, slug=post,
-                                   status='published',
-                                   publish__year=year,
-                                   publish__month=month,
-                                   publish__day=day)
+    post = get_object_or_404(Post, slug=post, status='published',
+                             publish__year=year,
+                             publish__month=month,
+                             publish__day=day)
 
     # List of similar posts
     post_tags_ids = post.tags.values_list('id', flat=True)
@@ -72,9 +74,9 @@ def post_detail(request, year, month, day, post):
     else:
         comment_form = CommentForm()
         return render(request, 'post/detail.html', {'post': post,
-                                                         'comments': comments,
-                                                         'comment_form': comment_form,
-                                                         'similar_posts': similar_posts})
+                                                    'comments': comments,
+                                                    'comment_form': comment_form,
+                                                    'similar_posts': similar_posts})
 
 
 def post_new(request):

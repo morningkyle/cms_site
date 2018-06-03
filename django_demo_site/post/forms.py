@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
-        self.fields['title'].widget.attrs['style'] = 'width:60%;'
+        self.fields['title'].widget.attrs['style'] = 'width:40%;'
 
 
 class CommentForm(forms.ModelForm):
