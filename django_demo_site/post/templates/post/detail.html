@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+    {{ post.body|safe }}
+    
+    <h2>Similar posts</h2>
+    {% for post in similar_posts %}
+        <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+    {% empty %}
+        There are no similar posts yet.
+    {% endfor %}
+    
+    {% with comments.count as total_comments %}
+        <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+    {% endwith %}
+    
+    {% for comment in comments %}
+        <div class="comment">
+            <p class="info">Comment {{ forloop.counter }} by {{ comment.name }} {{ comment.created }}</p>
+            {{ comment.body|linebreaks }}
+        </div>
+    {% empty %}
+        <p>There are no comments yet.</p>
+    {% endfor %}
+    
+    {% if new_comment %}
+        <h2>Your comment has been added.</h2>
+    {% else %}
+        <input id="comment-button" type="button" onclick="EditOrSubmit()" value="Add New Comment">
+        <form id="comment-form" method="post"  style="display:None">
+            {{ comment_form.as_p }}
+            {% csrf_token %}
+        </form>
+        <script>
+            function EditOrSubmit() {
+                var btn = document.getElementById("comment-button");
+                var form = document.getElementById("comment-form");
+                if(form.style.display == "none") {
+                    btn.value = "Submit comment"
+                    form.style.display = "block"
+                }else if(form.style.display == "block") {
+                    btn.value = "Add new comment"
+                    form.style.display = "None"
+                    if (form.id_body.value.length >= 2) {
+                        form.submit()
+                    }
+                }else {
+                    console.log("Comment Form: unexpected display style")
+                }
+                form.id_body.value = null
+            }
+        </script>
+    {%  endif %}
+{% endblock %}
+
+
