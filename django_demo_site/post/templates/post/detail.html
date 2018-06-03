@@ -6,12 +6,12 @@
     <h1>{{ post.title }}</h1>
     <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
     {{ post.body|safe }}
-    
-    <h2>Similar posts</h2>
+
     {% for post in similar_posts %}
+        <h2>Similar posts</h2>
         <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
     {% empty %}
-        There are no similar posts yet.
+        <p> </p>
     {% endfor %}
     
     {% with comments.count as total_comments %}
@@ -24,7 +24,7 @@
             {{ comment.body|linebreaks }}
         </div>
     {% empty %}
-        <p>There are no comments yet.</p>
+        <p> </p>
     {% endfor %}
     
     {% if new_comment %}
