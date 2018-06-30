@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'taggit',
     'post',
     'login',
-    'taggit',
+    'spa',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ LOGIN_REDIRECT_URL = '/post'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_ROOT = "C:/work/wwwcms/mysite/static/"
+STATIC_ROOT = "C:/work/wwwcms/my_github_cms_site/django_demo_site/static/"
 STATIC_URL = '/static/'
 
 CKEDITOR_CONFIGS = {

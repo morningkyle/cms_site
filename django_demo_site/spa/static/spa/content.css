@@ -1,0 +1,12 @@
+.content > .main_lib {
+    width: 75%;
+    float: left;
+}
+
+.content > .right_panel {
+    margin-left: 75%;
+}
+
+.clear {
+    clear: both;
+}

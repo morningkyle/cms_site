@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top_nav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.top_nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.top_nav a {
+    float: left;
+    width: 20%;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.top_nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.top_nav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.bottom_nav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom_nav a {
+    float: left;
+    width: 20%;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.bottom_nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Make priority of active state higher than hover state */
+.bottom_nav a.active {
+    background-color: #4CAF50;
+    color: white;
+}

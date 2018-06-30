@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My SPA</title>
+
+    <link href="{% static  "spa/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static  "spa/nav_bar.css" %}" rel="stylesheet"  type="text/css">
+    <link href="{% static  "spa/content.css" %}" rel="stylesheet  type="text/css">
+</head>
+
+<body>
+<div class="top_nav" id="top_nav_bar">
+    <a class="active" href="#news">新闻</a>
+    <a href="#qa">问答</a>
+    <a href="#video">视频</a>
+    <a href="#education">教学</a>
+</div>
+
+<div class="container">
+    <div class="main_lib">
+        <div class="card d-flex flex-row">
+            <img class="rounded" src="{% static  "spa/img/ico.png" %}" alt="topic image" width="240" height="180px">
+            <div class="card-body">
+                <h3 class="card-title">今年70%的ICO没有上线交易所，而且可能永远不能上线</h3>
+                <p class="card-text">创建一个代币很容易，上市就难了.</p>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-row">
+            <img class="rounded" src="{% static  "spa/img/js.png" %}" alt="topic image" width="240" height="180px">
+            <div class="card-body">
+                <h3 class="card-title">Overview of the JavaScript ecosystem</h3>
+                <p class="card-text">JavaScript is used everywhere…web browser (Angular, React), server-side (Node), mobile,
+                    desktop, games, Internet of Things, robotics, virtual reality, etc.</p>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-row">
+            <img class="rounded" src="{% static  "spa/img/ai.png" %}" alt="topic image" width="240" height="180px">
+            <div class="card-body">
+                <h3 class="card-title">Exploring the Artificial Intelligence Ecosystem: AI, Machine Learning, and Deep Learning</h3>
+                <p class="card-text">At this time, we are tracking 855 Artificial Intelligence companies across 13 categories,
+                    with a combined funding amount of $2.73B. These are companies and categories that involve anything and
+                    everything that is Artificial Intelligence. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<div class="bottom_nav" id="bottom_nav_bar">
+    <a href="#history">历史</a>
+    <a href="#like">收藏</a>
+    <a href="#watch">关注</a>
+    <a href="#setting">设置</a>
+</div>
+
+<script src="{% static "spa/spa.js" %}"></script>
+</body>
+</html>

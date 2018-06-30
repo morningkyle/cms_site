@@ -18,7 +18,10 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 from post import views as post_view
+from spa import views as spa_view
+
 
 
 urlpatterns = [
@@ -26,4 +29,6 @@ urlpatterns = [
     url(r'^account/', include('login.urls', namespace='login', app_name='login')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', post_view.root_view),
+    url(r'^spa/', spa_view.spa_view),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
