@@ -26,7 +26,7 @@ SECRET_KEY = 'pahq5!8a@t6xu@g2h$9fkfj5l0o#zm9z4q7&#o*+m9f*9#r#07'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['39.108.140.164', '127.0.0.1',]
+ALLOWED_HOSTS = ['120.77.87.30', '39.108.140.164', '127.0.0.1',]
 
 
 # Application definition
@@ -123,7 +123,7 @@ LOGIN_REDIRECT_URL = '/post'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_ROOT = "C:/work/wwwcms/my_github_cms_site/django_demo_site/static/"
+STATIC_ROOT = "/var/www/cms_site/django_demo_site/static/"
 STATIC_URL = '/static/'
 
 CKEDITOR_CONFIGS = {
